@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Converter — Temperature · Length · Weight · Currency</title>
+      <meta name="description" content="A simple unit converter for temperature, length, weight and live currency rates (powered by exchangerate.host)." />
+      <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Unit Converter</h1>
+    <p class="lead">Temperature, length, weight conversions — and live currency rates (powered by exchangerate.host).</p>
+
+    <div class="grid">
+      <!-- Temperature -->
+      <div class="card" id="temp-card">
+        <label>Temperature</label>
+        <div class="row">
+          <div>
+            <input id="temp-value" type="number" step="any" value="25">
+          </div>
+          <div>
+            <select id="temp-from">
+              <option value="C">Celsius (°C)</option>
+              <option value="F">Fahrenheit (°F)</option>
+              <option value="K">Kelvin (K)</option>
+            </select>
+          </div>
+          <div>
+            <select id="temp-to">
+              <option value="F">Fahrenheit (°F)</option>
+              <option value="C">Celsius (°C)</option>
+              <option value="K">Kelvin (K)</option>
+            </select>
+          </div>
+        </div>
+        <div class="result" id="temp-result">25 °C → 77 °F</div>
+      </div>
+
+      <!-- Length -->
+      <div class="card" id="len-card">
+        <label>Length</label>
+        <div class="row">
+          <div>
+            <input id="len-value" type="number" step="any" value="1">
+          </div>
+          <div>
+            <select id="len-from">
+              <option value="m">Meters (m)</option>
+              <option value="km">Kilometers (km)</option>
+              <option value="mi">Miles (mi)</option>
+              <option value="ft">Feet (ft)</option>
+              <option value="in">Inches (in)</option>
+              <option value="cm">Centimeters (cm)</option>
+            </select>
+          </div>
+          <div>
+            <select id="len-to">
+              <option value="km">Kilometers (km)</option>
+              <option value="m">Meters (m)</option>
+              <option value="mi">Miles (mi)</option>
+              <option value="ft">Feet (ft)</option>
+              <option value="in">Inches (in)</option>
+              <option value="cm">Centimeters (cm)</option>
+            </select>
+          </div>
+        </div>
+        <div class="result" id="len-result">1 m → 0.001 km</div>
+      </div>
+
+      <!-- Weight -->
+      <div class="card" id="wt-card">
+        <label>Weight</label>
+        <div class="row">
+          <div>
+            <input id="wt-value" type="number" step="any" value="1">
+          </div>
+          <div>
+            <select id="wt-from">
+              <option value="kg">Kilograms (kg)</option>
+              <option value="g">Grams (g)</option>
+              <option value="lb">Pounds (lb)</option>
+              <option value="oz">Ounces (oz)</option>
+            </select>
+          </div>
+          <div>
+            <select id="wt-to">
+              <option value="g">Grams (g)</option>
+              <option value="kg">Kilograms (kg)</option>
+              <option value="lb">Pounds (lb)</option>
+              <option value="oz">Ounces (oz)</option>
+            </select>
+          </div>
+        </div>
+        <div class="result" id="wt-result">1 kg → 1000 g</div>
+      </div>
+
+      <!-- Currency -->
+      <div class="card" id="cur-card">
+        <label>Currency (live rates)</label>
+        <div class="row">
+          <div>
+            <input id="cur-value" type="number" step="any" value="1">
+          </div>
+          <div>
+            <select id="cur-from"></select>
+          </div>
+          <div>
+            <select id="cur-to"></select>
+          </div>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+          <button id="convert-currency" class="btn">Convert</button>
+          <div class="small" id="cur-status">Rates: live • api: exchangerate.host</div>
+        </div>
+        <div class="result" id="cur-result">—</div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Made by <a href="https://mrelvis.vercel.app" target="_blank" rel="noopener">Elvis</a></p>
+
+    </footer>
+
+      <script src="index.js"></script>
+</body>
+</html>
